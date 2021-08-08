@@ -64,7 +64,7 @@ void my_arp_handle_request(uint32_t ip_address, const unsigned char *mac_address
 	arp_get_my_macaddr(mac_buffer);
 	int my_ip_address = arp_get_my_ipaddr();
 
-	if(my_ip_address == ip_address){
+	if(my_ip_address == ip_address){ /* make sure its this hosts ip */
 		
 		char buffer[1000] = {};	
 
@@ -115,6 +115,7 @@ void my_arp_handle_request(uint32_t ip_address, const unsigned char *mac_address
  */ 
 void my_arp_handle_reply(uint32_t ip_address, const unsigned char *mac_address)
 {
+	/* Insert ip/mac pair into ARP cache */
 	arp_insert_cache(ip_address, mac_address);	   
 }
 
