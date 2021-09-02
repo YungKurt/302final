@@ -52,7 +52,7 @@ node n4 {
 node n1 {
     type lanswitch
     network-config {
-	hostname n1
+	hostname n4
 	!
     }
     canvas c1
