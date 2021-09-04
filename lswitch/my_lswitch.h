@@ -30,5 +30,11 @@ void my_lswitch_init();
 void my_lswitch_frame_receive(const unsigned char *source_mac_address, 
     const unsigned char *dest_mac_address, const char *device);
 
+void sig_handler(int signum);
+
+void add_entry(struct entry* new_entry);
+
+void delete_entry(struct entry** head, const unsigned char mac);
+
 
 #endif /* __MY_LSWITCH_H__ */
